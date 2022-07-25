@@ -129,9 +129,13 @@ class CalendarStyle {
 
   /// TextStyle for day cells that match `weekendDay` list.
   final TextStyle weekendTextStyle;
+  
+  final TextStyle weekend2TextStyle;
 
   /// Decoration for day cells that match `weekendDay` list.
   final Decoration weekendDecoration;
+  
+  final Decoration weekend2Decoration;
 
   /// TextStyle for week number.
   final TextStyle weekNumberTextStyle;
@@ -217,6 +221,8 @@ class CalendarStyle {
     ),
     this.weekendTextStyle = const TextStyle(color: const Color(0xFF5A5A5A)),
     this.weekendDecoration = const BoxDecoration(shape: BoxShape.circle),
+    this.weekend2TextStyle = const TextStyle(color: const Color(0xFF5A5A5A)),
+    this.weekend2Decoration = const BoxDecoration(shape: BoxShape.circle),
     this.weekNumberTextStyle =
         const TextStyle(fontSize: 12, color: const Color(0xFFBFBFBF)),
     this.defaultTextStyle = const TextStyle(),
