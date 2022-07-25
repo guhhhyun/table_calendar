@@ -7,7 +7,7 @@ import 'package:flutter/widgets.dart';
 typedef DayBuilder = Widget? Function(BuildContext context, DateTime day);
 /// 필요한거
 /// aa
-typedef HeaderBuilder = Widget Function(
+typedef HeaderBuilder = Widget? Function(
     BuildContext context,
     DateTime day,
     VoidCallback onPrevious,
