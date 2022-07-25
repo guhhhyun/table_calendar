@@ -21,6 +21,7 @@ class CellContent extends StatelessWidget {
   final bool isDisabled;
   final bool isHoliday;
   final bool isWeekend;
+  final bool isWeekend2;
   final CalendarStyle calendarStyle;
   final CalendarBuilders calendarBuilders;
 
@@ -40,6 +41,7 @@ class CellContent extends StatelessWidget {
     required this.isDisabled,
     required this.isHoliday,
     required this.isWeekend,
+    required this.isWeekend2,
     this.locale,
   }) : super(key: key);
 
