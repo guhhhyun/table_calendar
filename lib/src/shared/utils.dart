@@ -5,7 +5,15 @@ import 'package:flutter/widgets.dart';
 
 /// Signature for a function that creates a widget for a given `day`.
 typedef DayBuilder = Widget? Function(BuildContext context, DateTime day);
-
+/// 필요한거
+/// aa
+typedef HeaderBuilder = Widget Function(
+    BuildContext context,
+    DateTime day,
+    VoidCallback onPrevious,
+    VoidCallback onNext,
+    CalendarFormat calendarFormat,
+    );
 /// Signature for a function that creates a widget for a given `day`.
 /// Additionally, contains the currently focused day.
 typedef FocusedDayBuilder = Widget? Function(
