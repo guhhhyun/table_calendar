@@ -64,7 +64,9 @@ class TableCalendar<T> extends StatefulWidget {
   /// List of days treated as weekend days.
   /// Use built-in `DateTime` weekday constants (e.g. `DateTime.monday`) instead of `int` literals (e.g. `1`).
   final List<int> weekendDays;
-
+  /// 필요한거
+  final List<int> weekendDays2;
+    
   /// Specifies `TableCalendar`'s current format.
   final CalendarFormat calendarFormat;
 
@@ -214,7 +216,8 @@ class TableCalendar<T> extends StatefulWidget {
     this.locale,
     this.rangeStartDay,
     this.rangeEndDay,
-    this.weekendDays = const [DateTime.saturday, DateTime.sunday],
+    this.weekendDays = const [DateTime.saturday],
+    this.weekendDays2 = const [DateTime.sunday],
     this.calendarFormat = CalendarFormat.month,
     this.availableCalendarFormats = const {
       CalendarFormat.month: 'Month',
@@ -453,6 +456,17 @@ class _TableCalendarState<T> extends State<TableCalendar<T>> {
           ValueListenableBuilder<DateTime>(
             valueListenable: _focusedDay,
             builder: (context, value, _) {
+              if (widget.calendarBuilders.headerBuilder != null) {
+                final headerCallback = widget.calendarBuilders.headerBuilder!;
+                final headerWidget = headerCallback.call(
+                  context,
+                  value,
+                  _onLeftChevronTap,
+                  _onRightChevronTap,
+                  widget.calendarFormat,
+                );
+                return headerWidget;
+              }
               return CalendarHeader(
                 headerTitleBuilder: widget.calendarBuilders.headerTitleBuilder,
                 focusedMonth: value,
